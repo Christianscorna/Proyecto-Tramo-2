@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: white;
+    background-color: darkblue;
+    line-height: 70px;
+    margin: 0;
+}
+
+header > p{
+    margin: 0;
+    background-color: blueviolet;
+    padding: 10px;
+    text-align: center;
+    font-weight: 100;
+    transition: color 1s;
+}
+
+header > p:hover {
+    color: white;
+}
+
+h1, h2, h4 {
+    text-align: center;
+}
+
+h4 {
+    font-size: large;
+}
+
+article {
+    display: flex;
+}
+
+.contenido_1 {
+    margin: 0 10px;
+    text-align: justify;
+}
+
+.contenido_2 {
+    margin: 0 20px;
+    text-align: justify;
+}
+
+span {
+    font-style: oblique;
+    margin-left: 10%;
+}
+
+@media (max-width: 1024px){
+    article{
+        display: inline;
+    }
+}
