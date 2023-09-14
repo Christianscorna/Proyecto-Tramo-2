@@ -1,0 +1,17 @@
+body {
+    background-color: blue;
+    display: flex;
+    /*
+      La propiedad flex-wrap establece si los elementos se colocan en una sola línea o en varias.
+    */
+    flex-wrap: wrap;
+    justify-content: space-evenlys;
+}
+
+div {
+    width: 30%;
+    height: 200px;
+    background-color: black;
+    margin: 20px auto;
+}
+

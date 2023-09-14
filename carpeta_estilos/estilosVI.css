@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+
+.c {
+    height: 200px;
+    width: 200px;
+    margin: 30px 20px;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    /*
+        animation-name: permiten controlar el flijo de la animacion.
+    */
+    animation-name: traslacion_v1;
+    /*
+        animation-duration: Nos dice cuanto dura la animacion.
+    */
+    animation-duration: 4s;
+    /*
+        animation-iteration-count: Nos permite establecer cuantas veces se repite la animacion.
+    */
+    animation-iteration-count: infinite;
+    /*
+        animation-direction: Permite establecer desce que punto comenzara la animacion cuando comienza y termina.
+        parametros admitidos:
+        - normal (va de 0% a 100%)
+        - reverse (va de 100% a 0%)
+        - alternate (va del 0% al 100% y a partir del 100% al 0%)
+        - alternate-reverse (se mueve del 0% al 100% y de ahi al 0% sucesivamente)
+    */
+    animation-direction: normal;
+    /*
+        animation-delay: Define un tiempo de espera para que una animacion se ejecute.
+    */
+    animation-delay: 0s;
+    /*
+        animation-timing-function: Define la curva de la aceleracion de la animacion
+        Parametros admitidos:
+        - ease, es el valor por defecto. Acelera hacia la mitad de la animacion
+        - ease-in, comienza lentamente, aumentando prograsivamente hacia el final de la animacion. 
+        - ease-in-out, comienza lento, acelera y luego disminuye otra vez. 
+        - ease-out, comienza rápido y disminuye.
+        - linear, no incrementa ni decrementa su aceleración. 
+    */
+    animation-timing-function: linear;
+}
+
+/*Efecto que permite pausar y despausar la animación: */
+.c:hover{
+    animation-play-state: paused;
+}
+
+/*
+    animation es un shorthand property de todas las animaciones pasadas: 
+    por ejemplo:
+    animation: infinite changeColor 3s;
+    si se ponen dos tiempos, el primero representa la duracion y el segundo el delay
+*/
+
+
+/*Se controlan mediante porcentajes de la animacion.*/
+@keyframes changeColor_v1 {
+    0% {
+        background-color: crimson;
+    }
+    100%{
+        background-color: cornflowerblue;
+    }
+}
+
+/*Otra forma de hacer exactamente lo mismo es hacer con la palabra reservada from..to*/
+@keyframes changeColor_v2 {
+    from {
+        background-color: crimson;
+    }
+    to {
+        background-color: cornflowerblue;
+    }
+}
+
+@keyframes traslacion_v1{
+    0% {
+        transform: translate(0);
+        background-color: black;
+    }
+    25% {
+        transform: translateX(100%);
+        background-color: blueviolet;
+    }
+
+    50% {
+        transform: translate(100%, 100%);
+        background-color: aquamarine;
+    }
+
+    75% {
+        transform: translate(0, 100%);
+        background-color: orangered;
+    }
+}
+
+/*
+    Debemos asegurarnos de que la propiedad que queramos animar sea animable
+    justify-content or ejemplo, no es animable!!
+    https://developer.mozilla.org/es/docs/Web/CSS/animation
+*/
